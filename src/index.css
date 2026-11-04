@@ -1,0 +1,79 @@
+
+@import "tailwindcss";
+
+/* =========================================
+   DESIGN SYSTEM - PERSONAL PORTFOLIO
+   ========================================= */
+
+:root {
+  font-family: 'Inter', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: light;
+  background-color: #ffffff;
+  color: #171717;
+
+  --font-primary: 'Inter', sans-serif;
+
+  --color-primary: #2563eb;
+  --color-text: #171717;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-border: #e5e7eb;
+
+  --container-width: 1160px;
+
+  --radius-card: 16px;
+  --radius-button: 10px;
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: #dbeafe;
+  color: #1e40af;
+}

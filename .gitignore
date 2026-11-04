@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Testing
+playwright-report/
+test-results/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local certificates
+*.pem
+*.key
+
+# Archivos temporales de Microsoft Office
+~$*
+Personal_Portfolio_Documentacion.docx  
