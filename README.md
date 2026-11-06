@@ -1,112 +1,147 @@
 # Personal Portfolio
 
-Professional portfolio website developed by David Núñez.
+Professional portfolio website developed by Angel David Núñez Paredes.
 
 ## Overview
 
-A modern, responsive and accessible personal portfolio designed to showcase software engineering projects, technical skills, professional experience, education and research activities.
+A modern, responsive and accessible personal portfolio
+showcasing software engineering, biomedical instrumentation,
+technical projects, academic background and research.
+
+The application is designed for international recruiters,
+engineering teams and technology companies.
 
 ## Tech Stack
 
-- React
+### Frontend
+
+- React 19
 - TypeScript
 - Vite
-- Tailwind CSS
+- Tailwind CSS 4
 - Lucide React
 - React Router
+
+### Internationalization
+
 - i18next
-- Vitest
-- React Testing Library
-- Oxlint
-- Prettier
-
-## Features
-
-- Responsive, mobile-first design
-- Light, Dark and System themes
-- English and Spanish language support
-- Project portfolio and technical skills
-- Professional experience and education
-- Research and instrumentation projects
-- Contact section
-- SEO optimization
-- WCAG 2.2 AA accessibility goals
-
-## Featured Projects
-
-- MedLab Platform
-- InstrumentHub
-- Additional software engineering projects
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 22.12 or higher
-- npm
-- Git
-
-### Installation
-
-```bash
-git clone https://github.com/Davidn00/personal-portfolio.git
-cd personal-portfolio
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-### Production Build
-
-```bash
-npm run build
-```
-
-### Testing
-
-```bash
-npm run test:run
-```
+- react-i18next
 
 ### Code Quality
 
-```bash
-npm run lint
-npm run typecheck
-npm run format:check
-```
+- Oxlint
+- Prettier
+- TypeScript
+
+### Testing
+
+- Vitest
+- React Testing Library
+- jsdom
+
+### Planned Infrastructure
+
+- Amazon S3
+- Amazon CloudFront
+- GitHub Actions
+- AWS OIDC
+
+## Features
+
+- Responsive portfolio layout.
+- Modular React architecture.
+- Reusable UI components.
+- Professional profile presentation.
+- Technical skills grouped by categories.
+- Featured project cards.
+- Individual project detail pages.
+- Academic education timeline.
+- Professional experience section.
+- Research and instrumentation section.
+- Contact information and social links.
+- Spanish and English support (planned).
+- Light, Dark and System themes (planned).
+- Project category filtering (planned).
+
+## Featured Projects
+
+### MedLab Platform
+
+Biomedical laboratory management platform.
+
+Technologies:
+
+- Python
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- Celery
+- Docker
+
+Repository:
+https://github.com/Davidn00/medlab-platform
+
+### InstrumentHub
+
+Biomedical instrument acquisition and data processing platform.
+
+Technologies:
+
+- Python
+- FastAPI
+- React
+- TypeScript
+- TimescaleDB
+- SciPy
+- WebSockets
+
+### Digital Thermometer
+
+Embedded temperature acquisition system.
+
+Technologies:
+
+- C
+- PIC18F4550
+- ADC
+- I2C
+
+Repository:
+https://github.com/Davidn00/digital_thermometer
+
+### FBG Sensor Research
+
+Research on fiber Bragg gratings and optical fiber instrumentation.
 
 ## Project Structure
 
 ```text
 src/
 ├── app/
+│   ├── router.tsx
+│   └── providers/
 ├── components/
+│   ├── common/
+│   ├── layout/
+│   └── projects/
 ├── sections/
+│   ├── Hero/
+│   ├── About/
+│   ├── Skills/
+│   ├── Projects/
+│   ├── Education/
+│   ├── Experience/
+│   ├── Research/
+│   └── Contact/
 ├── pages/
 ├── data/
-├── i18n/
 ├── hooks/
-├── styles/
+├── i18n/
 ├── types/
+├── styles/
 └── test/
+
+public/
+├── documents/
+└── images/
 ```
-
-## Deployment
-
-The planned production infrastructure is AWS S3 + CloudFront, with GitHub Actions and AWS OIDC for CI/CD.
-
-## Author
-
-David Núñez
-
-- GitHub: [https://github.com/Davidn00](https://github.com/Davidn00)
-- LinkedIn: [https://linkedin.com/in/angel-david-núñez-paredes-03918b372/](https://linkedin.com/in/angel-david-núñez-paredes-03918b372/)
-
-## License
-
-All rights reserved.

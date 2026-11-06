@@ -1,0 +1,76 @@
+import type { SkillGroup } from '../types/portfolio';
+
+export const skillGroups: SkillGroup[] = [
+  {
+    id: 'backend',
+    title: 'Backend Engineering',
+    description: 'Backend systems, APIs and application architecture.',
+    icon: 'code',
+    technologies: [
+      'Python',
+      'FastAPI',
+      'REST APIs',
+      'SQLAlchemy',
+      'Pydantic',
+      'Celery',
+      'Pytest',
+    ],
+  },
+  {
+    id: 'frontend',
+    title: 'Frontend Development',
+    description: 'Modern web applications and user interfaces.',
+    icon: 'monitor',
+    technologies: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS'],
+  },
+  {
+    id: 'data',
+    title: 'Databases & Data',
+    description: 'Data storage, processing and analysis.',
+    icon: 'database',
+    technologies: [
+      'PostgreSQL',
+      'TimescaleDB',
+      'Redis',
+      'SQL',
+      'Pandas',
+      'NumPy',
+      'SciPy',
+    ],
+  },
+  {
+    id: 'instrumentation',
+    title: 'Instrumentation & Embedded',
+    description: 'Measurement systems and hardware integration.',
+    icon: 'activity',
+    technologies: [
+      'C',
+      'PIC18F4550',
+      'ADC',
+      'I²C',
+      'Sensors',
+      'FBG',
+      'Signal Processing',
+    ],
+  },
+  {
+    id: 'cloud',
+    title: 'Cloud & DevOps',
+    description: 'Infrastructure, automation and deployment.',
+    icon: 'cloud',
+    technologies: ['Docker', 'Git', 'GitHub Actions', 'AWS', 'CI/CD'],
+  },
+  {
+    id: 'practices',
+    title: 'Software Engineering',
+    description: 'Engineering practices and software quality.',
+    icon: 'layers',
+    technologies: [
+      'Clean Architecture',
+      'Automated Testing',
+      'API Design',
+      'Documentation',
+      'Modular Architecture',
+    ],
+  },
+];
