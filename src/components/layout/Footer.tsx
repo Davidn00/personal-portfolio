@@ -1,21 +1,27 @@
 import { ArrowUpRight } from 'lucide-react';
+
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+
+import { useTranslation } from 'react-i18next';
 
 const currentYear = new Date().getFullYear();
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="site-footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <a href="#home" className="brand">
+          <a href="/#home" className="brand">
             <span className="brand-mark">AD</span>
+
             <span>
               DAVID NÚÑEZ<span className="brand-dot">.</span>
             </span>
           </a>
 
-          <p>Software engineering, biomedical instrumentation and research.</p>
+          <p>{t('footer.description')}</p>
         </div>
 
         <div className="footer-socials">
@@ -44,8 +50,11 @@ export function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {currentYear} Angel David Núñez Paredes.</p>
-        <p>Designed &amp; developed with React and TypeScript.</p>
+        <p>
+          © {currentYear} Angel David Núñez Paredes. {t('footer.rights')}
+        </p>
+
+        <p>{t('footer.built')}</p>
       </div>
     </footer>
   );

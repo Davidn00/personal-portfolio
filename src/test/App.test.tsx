@@ -4,14 +4,18 @@ import { render, screen } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
+import { ThemeProvider } from '../app/providers/ThemeProvider';
+
 import App from '../App';
 
 describe('Personal Portfolio Application', () => {
   it('renders the main portfolio sections', () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>,
+      <ThemeProvider>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </ThemeProvider>,
     );
 
     expect(
@@ -41,9 +45,11 @@ describe('Personal Portfolio Application', () => {
 
   it('renders all featured projects', () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>,
+      <ThemeProvider>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </ThemeProvider>,
     );
 
     expect(
@@ -67,9 +73,11 @@ describe('Personal Portfolio Application', () => {
 
   it('renders the contact section', () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>,
+      <ThemeProvider>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </ThemeProvider>,
     );
 
     expect(
@@ -78,18 +86,25 @@ describe('Personal Portfolio Application', () => {
       }),
     ).toBeInTheDocument();
 
+    const contactLinks = screen.getAllByRole('link', {
+      name: /get in touch/i,
+    });
+
     expect(
-      screen.getByRole('link', {
-        name: /contact me/i,
-      }),
-    ).toBeInTheDocument();
+      contactLinks.some(
+        (link) =>
+          link.getAttribute('href') === 'mailto:angelnunez0008@gmail.com',
+      ),
+    ).toBe(true);
   });
 });
 it('renders all professional experiences', () => {
   render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>,
+    <ThemeProvider>
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    </ThemeProvider>,
   );
 
   expect(
@@ -103,9 +118,11 @@ it('renders all professional experiences', () => {
 
 it('renders the scientific publication and DOI', () => {
   render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>,
+    <ThemeProvider>
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    </ThemeProvider>,
   );
 
   expect(

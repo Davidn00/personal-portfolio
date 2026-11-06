@@ -1,40 +1,38 @@
 import { ArrowUpRight } from 'lucide-react';
+
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 import type { Project } from '../../types/portfolio';
+
 import { Tag } from '../common/Tag';
 
 interface ProjectCardProps {
   project: Project;
 }
 
-const statusLabels = {
-  completed: 'Completed',
-  'in-progress': 'In progress',
-  prototype: 'Prototype',
-  research: 'Research',
-};
-
-const categoryLabels: Record<string, string> = {
-  backend: 'Backend',
-  instrumentation: 'Instrumentation',
-  embedded: 'Embedded',
-  research: 'Research',
-};
-
 export function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useTranslation();
+
+  const translationKey = `projects.items.${project.id}`;
+
   return (
     <article className="project-card">
       <Link
         to={`/projects/${project.slug}`}
         className="project-art"
-        aria-label={`View ${project.title} details`}
+        aria-label={`${t(`${translationKey}.description`)} — ${t(
+          'projects.viewDetails',
+        )}`}
       >
         <div className="project-art-decoration" />
 
         <div className="project-art-content">
           <span className="project-art-label">
-            {categoryLabels[project.category[0]]}
+            {project.category
+              .map((category) => t(`projects.categories.${category}`))
+              .join(' · ')}
           </span>
 
           <span className="project-art-title">{project.shortTitle}</span>
@@ -48,11 +46,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <h3>{project.title}</h3>
 
           <span className={`project-status status-${project.status}`}>
-            {statusLabels[project.status]}
+            {t(`projects.status.${project.status}`)}
           </span>
         </div>
 
-        <p>{project.description}</p>
+        <p>{t(`${translationKey}.description`)}</p>
 
         <div className="project-tags">
           {project.technologies.slice(0, 4).map((technology) => (
@@ -63,12 +61,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="project-footer">
           <span>
             {project.category
-              .map((category) => categoryLabels[category])
+              .map((category) => t(`projects.categories.${category}`))
               .join(' · ')}
           </span>
 
           <Link to={`/projects/${project.slug}`}>
-            View details <ArrowUpRight size={15} />
+            {t('projects.viewDetails')}
+            <ArrowUpRight size={15} />
           </Link>
         </div>
       </div>

@@ -1,5 +1,341 @@
 {
   "portfolio": "Personal Portfolio",
-  "welcome": "Welcome to my portfolio",
-  "name": "David Núñez"
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "research": "Research",
+    "education": "Education",
+    "experience": "Experience",
+    "contact": "Contact",
+    "talk": "Let's talk",
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation"
+  },
+  "hero": {
+    "headingStart": "Building software for",
+    "headingHighlight": "real-world",
+    "headingEnd": "engineering.",
+    "eyebrow": "SOFTWARE ENGINEERING & BIOMEDICAL SYSTEMS",
+    "heading": "Building software to solve real-world problems.",
+    "role": "Software Engineer | Python Backend Developer | Biomedical & Instrumentation Software",
+    "description": "I build software solutions that connect backend engineering, biomedical instrumentation and data-driven applications — from reliable APIs to acquisition and signal-processing systems.",
+    "contact": "Get in touch",
+    "downloadCv": "Download CV",
+    "scroll": "Explore portfolio",
+    "available": "Open to professional opportunities",
+    "location": "Mexico City, Mexico",
+    "metrics": {
+      "engineering": "Engineering",
+      "software": "Software development",
+      "instrumentation": "Instrumentation"
+    }
+  },
+  "about": {
+    "eyebrow": "PROFESSIONAL PROFILE",
+    "title": "About me",
+    "description": "A combination of engineering, programming and measurement systems experience.",
+    "paragraph1": "I am a software-focused engineer with a background in Biomedical Engineering and graduate training in Electrical Engineering, specializing in Instrumentation.",
+    "paragraph2": "My work brings together backend development, measurement systems, data acquisition and signal processing. I enjoy turning complex technical requirements into maintainable, scalable and verifiable software solutions.",
+    "focusLabel": "Professional focus",
+    "focusValue": "Backend & Engineering Software",
+    "locationLabel": "Location",
+    "locationValue": "Mexico City, Mexico",
+    "languagesLabel": "Languages",
+    "languagesValue": "Spanish and English (B2)",
+    "educationLabel": "Education",
+    "educationValue": "M.Sc. Electrical Engineering · Instrumentation"
+  },
+  "skills": {
+    "eyebrow": "TECHNICAL CAPABILITIES",
+    "title": "Technical skills",
+    "description": "Technologies and tools applied to software, instrumentation and data-processing projects.",
+    "groups": {
+      "backend": {
+        "title": "Backend Engineering",
+        "description": "Backend systems, APIs and application architecture."
+      },
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Modern web applications and user interfaces."
+      },
+      "data": {
+        "title": "Databases & Data",
+        "description": "Data storage, processing and analysis."
+      },
+      "instrumentation": {
+        "title": "Instrumentation & Embedded",
+        "description": "Measurement systems and hardware integration."
+      },
+      "cloud": {
+        "title": "Cloud & DevOps",
+        "description": "Infrastructure, automation and deployment."
+      },
+      "practices": {
+        "title": "Software Engineering",
+        "description": "Architecture, quality and software development practices."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "SELECTED WORK",
+    "title": "Featured projects",
+    "description": "A selection of software and engineering projects demonstrating architecture, implementation and applied problem-solving.",
+    "filters": {
+      "all": "All",
+      "backend": "Backend",
+      "instrumentation": "Instrumentation",
+      "embedded": "Embedded",
+      "research": "Research"
+    },
+    "status": {
+      "completed": "Completed",
+      "in-progress": "In progress",
+      "prototype": "Prototype",
+      "research": "Research"
+    },
+    "viewDetails": "View details",
+    "viewProject": "View project",
+    "noResults": "There are no projects in this category.",
+    "showing": "Showing {{count}} projects",
+    "back": "Back to projects",
+    "featured": "FEATURED PROJECT",
+    "overview": "Project overview",
+    "problem": "The problem",
+    "solution": "Solution",
+    "features": "Key features",
+    "architecture": "Architecture",
+    "technologies": "Technologies",
+    "highlights": "Technical highlights",
+    "repository": "Repository",
+    "demo": "Live demo",
+    "categories": {
+      "backend": "Backend",
+      "instrumentation": "Instrumentation",
+      "embedded": "Embedded",
+      "research": "Research"
+    },
+    "items": {
+      "medlab": {
+        "description": "A LIMS-inspired platform for biomedical laboratories, covering samples, tests, equipment, reporting and operational workflows.",
+        "overview": "MedLab Platform is a biomedical laboratory management system designed to organize laboratory operations, manage samples and tests, monitor biomedical equipment and generate technical reports.",
+        "problem": "Biomedical laboratories require reliable workflows for tracking samples, laboratory tests, equipment and results. Managing these processes independently can make traceability and operational control difficult.",
+        "solution": "A modular backend platform that centralizes laboratory entities and operational workflows through a REST API.",
+        "features": [
+          "Patient and sample management.",
+          "Laboratory test and result management.",
+          "Biomedical equipment lifecycle management.",
+          "Equipment calibration and maintenance.",
+          "Role-based access control.",
+          "JWT authentication.",
+          "Audit logging.",
+          "PDF and data export reports.",
+          "Background processing with Celery.",
+          "Automated testing and continuous integration."
+        ],
+        "architecture": "Router → Service → Repository → SQLAlchemy → PostgreSQL. Background operations are processed through Celery workers and Redis-compatible infrastructure.",
+        "highlights": [
+          "Modular layered architecture.",
+          "Authentication and RBAC.",
+          "Database migrations.",
+          "Asynchronous processing.",
+          "Automated tests.",
+          "Containerized deployment."
+        ]
+      },
+      "instrumenthub": {
+        "description": "A platform for acquisition, processing, storage and real-time visualization of biomedical instrument and sensor data.",
+        "overview": "InstrumentHub connects instrument communication, data acquisition, signal processing and real-time monitoring in a modular engineering platform.",
+        "problem": "Biomedical instrumentation requires reliable acquisition pipelines, signal analysis, data persistence and visualization of measurements.",
+        "solution": "A platform integrating acquisition services, processing modules, time-series storage and a web dashboard.",
+        "features": [
+          "Sensor and instrument simulation.",
+          "Data acquisition and buffering.",
+          "Signal processing and FFT analysis.",
+          "Anomaly detection.",
+          "FBG sensor analysis.",
+          "TimescaleDB time-series storage.",
+          "REST API.",
+          "Real-time WebSocket communication.",
+          "Interactive monitoring dashboard."
+        ],
+        "architecture": "Instrument → Acquisition Manager → Measurement and Signal Processing → Time-Series Storage → REST API / WebSocket → React Dashboard.",
+        "highlights": [
+          "Modular instrument abstraction.",
+          "Real-time acquisition.",
+          "Signal processing.",
+          "Time-series storage.",
+          "FBG analysis.",
+          "Interactive visualization."
+        ]
+      },
+      "digital-thermometer": {
+        "description": "An embedded temperature acquisition and display system built around a microcontroller and peripheral interfaces.",
+        "overview": "An embedded engineering project focused on acquiring temperature measurements and displaying the resulting values.",
+        "problem": "Temperature monitoring requires the integration of sensor acquisition, microcontroller processing and user-readable output.",
+        "solution": "An embedded implementation using a PIC microcontroller and peripheral communication interfaces.",
+        "features": [
+          "Temperature acquisition.",
+          "ADC-based measurement.",
+          "Microcontroller processing.",
+          "Peripheral communication.",
+          "Digital measurement visualization."
+        ],
+        "architecture": "Sensor → ADC → PIC18F4550 → Processing → Display Interface.",
+        "highlights": [
+          "Microcontroller programming.",
+          "Sensor acquisition.",
+          "Peripheral integration.",
+          "Embedded system design."
+        ]
+      },
+      "fbg-research": {
+        "description": "Research on UV-induced fiber Bragg gratings, experimental characterization and temperature–strain decoupling.",
+        "overview": "Research focused on optical fiber sensors based on fiber Bragg gratings and their characterization for measurement applications.",
+        "problem": "Temperature and mechanical strain can influence the wavelength response of FBG sensors, requiring appropriate characterization and decoupling methodologies.",
+        "solution": "An experimental and analytical research approach involving optical sensing, characterization and signal analysis.",
+        "features": [
+          "FBG sensor characterization.",
+          "Optical response analysis.",
+          "Temperature and strain studies.",
+          "Experimental data processing.",
+          "Signal analysis."
+        ],
+        "architecture": "Optical Sensor → Measurement Instrumentation → Data Acquisition → Signal Processing → Experimental Analysis.",
+        "highlights": [
+          "Optical fiber instrumentation.",
+          "Experimental characterization.",
+          "Temperature–strain decoupling."
+        ]
+      }
+    }
+  },
+  "education": {
+    "eyebrow": "ACADEMIC BACKGROUND",
+    "title": "Education",
+    "description": "Academic training in biomedical engineering, electrical engineering and instrumentation.",
+    "items": {
+      "biomedical-engineering": {
+        "degree": "Biomedical Engineering",
+        "description": "Undergraduate engineering education focused on biomedical systems and engineering applications."
+      },
+      "master-electrical-engineering": {
+        "degree": "M.Sc. Electrical Engineering · Instrumentation",
+        "description": "Graduate studies specializing in instrumentation, measurement systems and engineering research."
+      }
+    }
+  },
+
+  "experience": {
+    "eyebrow": "PROFESSIONAL BACKGROUND",
+    "title": "Experience",
+    "description": "Professional experience in software development, biomedical engineering, instrumentation and research environments.",
+    "items": {
+      "icat-unam": {
+        "position": "Backend Developer – Automation & Data Applications",
+        "description": "Development of software solutions for engineering applications, technical environments and research-oriented instrumentation systems.",
+        "responsibilities": [
+          "Develop software solutions using Python, C and C# for engineering applications and technical environments.",
+          "Implement data processing and analysis workflows, task automation and information management solutions.",
+          "Apply object-oriented programming, debugging, testing, validation and technical documentation practices.",
+          "Collaborate on research and instrumentation projects with multidisciplinary engineering teams."
+        ]
+      },
+      "cie": {
+        "position": "Biomedical Specialist – Medical Diagnostic Equipment Technician",
+        "description": "Technical development, programming and validation activities involving electronic systems and medical diagnostic equipment.",
+        "responsibilities": [
+          "Program and test electronic systems used in medical diagnostic equipment.",
+          "Develop analysis and validation tools, including partial automation of measurement processes and technical documentation.",
+          "Participate in research and development projects applying engineering and programming knowledge."
+        ]
+      },
+      "cneuro": {
+        "position": "Biomedical Engineer – Scientific Reserve",
+        "description": "Engineering and research activities focused on biomedical devices, embedded systems and laboratory automation.",
+        "responsibilities": [
+          "Program PIC and STM32 microcontrollers in C for the development and validation of biomedical solutions.",
+          "Automate laboratory processes, analyze experimental data and prepare technical documentation.",
+          "Participate in the development and validation of biomedical devices and technological solutions.",
+          "Collaborate with multidisciplinary engineering and research teams."
+        ]
+      }
+    }
+  },
+  "research": {
+    "eyebrow": "RESEARCH & ENGINEERING",
+    "title": "Research",
+    "description": "Work involving optical instrumentation, fiber sensors, measurement systems and signal processing.",
+    "publications": "Publications",
+    "publicationType": "SCIENTIFIC PUBLICATION",
+    "doi": "DOI",
+    "viewPublication": "View publication",
+    "viewDoi": "View DOI",
+    "items": {
+      "fbg-optical-sensing": {
+        "title": "Fiber Bragg Grating Sensors and Optical Instrumentation",
+        "description": "Research focused on fiber optic sensing technologies, particularly Fiber Bragg Grating (FBG) sensors, their experimental characterization and their application in measurement systems. The research explores UV-induced gratings, sensor response characterization and temperature-strain decoupling.",
+        "topics": [
+          "Fiber Bragg Gratings (FBG)",
+          "Optical Fiber Sensors",
+          "UV-Induced Gratings",
+          "Experimental Characterization",
+          "Temperature-Strain Decoupling",
+          "Instrumentation",
+          "Signal Analysis"
+        ]
+      }
+    },
+    "publication": {
+      "event": "Latin American Congress on Automatic Control",
+      "date": "October 17, 2025",
+      "title": "State-estimation as a virtual sensing scheme in a heat conduction experiment"
+    },
+    "researchFocus": "RESEARCH FOCUS",
+    "visualLabel": "FBG · OPTICAL SENSING",
+    "visualCaption": "FIBER BRAGG GRATING · OPTICAL INSTRUMENTATION",
+    "explore": "Explore publications",
+    "scientificOutput": "SCIENTIFIC OUTPUT",
+    "publicationDescription": "Scientific contributions and academic publications related to engineering and applied research.",
+    "researchNote": "Research activities focus on optical instrumentation, sensor characterization, experimental measurements and engineering applications."
+  },
+
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's build something meaningful together.",
+    "description": "I am open to professional opportunities involving backend development, software engineering and instrumentation.",
+    "button": "Get in touch",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "description": "Software Engineering · Biomedical Instrumentation",
+    "rights": "All rights reserved.",
+    "built": "Built with React and TypeScript."
+  },
+  "theme": {
+    "label": "Appearance",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "change": "Change appearance"
+  },
+  "language": {
+    "label": "Language",
+    "spanish": "Spanish",
+    "english": "English",
+    "change": "Change language"
+  },
+  "seo": {
+    "homeTitle": "Angel David Núñez Paredes | Software Engineer",
+    "homeDescription": "Software Engineer specializing in Python Backend Development, biomedical engineering and instrumentation.",
+    "projectTitle": "{{project}} | Angel David Núñez Paredes",
+    "projectDescription": "Technical details, architecture and technologies behind {{project}}."
+  },
+  "errors": {
+    "notFound": "The requested project could not be found.",
+    "goHome": "Back to home"
+  }
 }

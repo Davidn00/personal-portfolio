@@ -1,15 +1,20 @@
 import { GraduationCap, CheckCircle2, Clock3 } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 import { education } from '../../data/education';
+
 import { SectionHeading } from '../../components/common/SectionHeading';
 
 export function EducationSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="education" className="portfolio-section">
       <SectionHeading
-        eyebrow="ACADEMIC BACKGROUND"
-        title="Education"
-        description="Engineering education supporting a multidisciplinary approach to software and instrumentation."
+        eyebrow={t('education.eyebrow')}
+        title={t('education.title')}
+        description={t('education.description')}
       />
 
       <div className="timeline">
@@ -23,7 +28,7 @@ export function EducationSection() {
 
             <div className="timeline-content">
               <div className="timeline-title-row">
-                <h3>{item.degree}</h3>
+                <h3>{t(`education.items.${item.id}.degree`)}</h3>
 
                 {item.status === 'completed' ? (
                   <CheckCircle2 size={17} />
@@ -36,7 +41,7 @@ export function EducationSection() {
 
               <span className="timeline-location">{item.location}</span>
 
-              <p>{item.description}</p>
+              <p>{t(`education.items.${item.id}.description`)}</p>
             </div>
           </article>
         ))}

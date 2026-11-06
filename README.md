@@ -48,20 +48,66 @@ engineering teams and technology companies.
 
 ## Features
 
-- Responsive portfolio layout.
-- Modular React architecture.
-- Reusable UI components.
-- Professional profile presentation.
-- Technical skills grouped by categories.
-- Featured project cards.
-- Individual project detail pages.
-- Academic education timeline.
-- Professional experience section.
-- Research and instrumentation section.
-- Contact information and social links.
-- Spanish and English support (planned).
-- Light, Dark and System themes (planned).
-- Project category filtering (planned).
+- Responsive professional portfolio.
+- React 19 + TypeScript architecture.
+- Spanish and English internationalization with i18next.
+- Persistent language selection.
+- Light, Dark and System themes.
+- Persistent theme preferences.
+- System theme detection through prefers-color-scheme.
+- Flash-free initial theme application.
+- Dynamic project category filtering.
+- Individual project detail routes.
+- Bilingual project descriptions.
+- Spanish and English CV downloads.
+- Dynamic SEO metadata.
+- Open Graph and Twitter Cards.
+- Canonical URLs.
+- Sitemap and robots.txt.
+- Accessible keyboard navigation.
+- Reduced-motion support.
+- Professional profile and experience presentation.
+- Academic background and research publications.
+- Automated testing with Vitest and React Testing Library.
+- Code quality with Oxlint and Prettier.
+
+## Internationalization
+
+The portfolio supports:
+
+- Spanish (es)
+- English (en)
+
+Language preferences are persisted using localStorage.
+
+Translations are managed through:
+
+src/i18n/locales/
+
+## Theme System
+
+Available themes:
+
+- Light
+- Dark
+- System
+
+The selected preference is persisted locally.
+
+System mode automatically follows the operating system
+color scheme.
+
+## SEO
+
+SEO metadata is dynamically managed for the homepage
+and individual project pages.
+
+Public SEO resources:
+
+- /robots.txt
+- /sitemap.xml
+
+Configure VITE_SITE_URL before production deployment.
 
 ## Featured Projects
 

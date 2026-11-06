@@ -10,16 +10,15 @@
       content="Angel David Núñez Paredes — Software Engineer, Python Backend Developer and Biomedical & Instrumentation Software."
     />
 
-    <meta
-      name="keywords"
-      content="Software Engineer, Python Backend Developer, Biomedical Engineering, Instrumentation, FastAPI, React"
-    />
-
     <meta name="author" content="Angel David Núñez Paredes" />
 
-    <meta name="theme-color" content="#172b4d" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="theme-color" content="#0b1120" />
 
     <meta property="og:type" content="website" />
+
+    <meta property="og:site_name" content="Angel David Núñez Paredes" />
 
     <meta
       property="og:title"
@@ -31,6 +30,10 @@
       content="Software engineering, biomedical instrumentation and research."
     />
 
+    <meta property="og:image" content="/images/profile.webp" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
     <title>Angel David Núñez Paredes | Software Engineer Portfolio</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -38,6 +41,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('portfolio-theme');
+
+          var theme =
+            savedTheme === 'light' || savedTheme === 'dark'
+              ? savedTheme
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (error) {
+          var theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        }
+      })();
+    </script>
   </head>
 
   <body>

@@ -1,5 +1,340 @@
 {
   "portfolio": "Portafolio personal",
-  "welcome": "Bienvenido a mi portfolio",
-  "name": "David Núñez"
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "research": "Investigación",
+    "education": "Formación",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "talk": "Hablemos",
+    "openMenu": "Abrir navegación",
+    "closeMenu": "Cerrar navegación"
+  },
+  "hero": {
+    "headingStart": "Desarrollando software para",
+    "headingHighlight": "problemas",
+    "headingEnd": "del mundo real.",
+    "eyebrow": "INGENIERÍA DE SOFTWARE Y SISTEMAS BIOMÉDICOS",
+    "heading": "Desarrollando software para resolver problemas reales.",
+    "role": "Software Engineer | Python Backend Developer | Biomedical & Instrumentation Software",
+    "description": "Desarrollo soluciones de software que conectan la ingeniería backend, la instrumentación biomédica y las aplicaciones orientadas a datos, desde APIs robustas hasta sistemas de adquisición y procesamiento de señales.",
+    "contact": "Contactar",
+    "downloadCv": "Descargar CV",
+    "scroll": "Explorar portfolio",
+    "available": "Abierto a oportunidades profesionales",
+    "location": "Ciudad de México, México",
+    "metrics": {
+      "engineering": "Ingeniería",
+      "software": "Desarrollo de software",
+      "instrumentation": "Instrumentación"
+    }
+  },
+  "about": {
+    "eyebrow": "PERFIL PROFESIONAL",
+    "title": "Sobre mí",
+    "description": "Una combinación de ingeniería, programación y experiencia en sistemas de medición.",
+    "paragraph1": "Soy un ingeniero orientado al desarrollo de software, con formación en Ingeniería Biomédica y estudios de posgrado en Ingeniería Eléctrica, especializado en Instrumentación.",
+    "paragraph2": "Mi trabajo integra desarrollo backend, sistemas de medición, adquisición de datos y procesamiento de señales. Me interesa transformar requisitos técnicos complejos en soluciones de software mantenibles, escalables y verificables.",
+    "focusLabel": "Área profesional",
+    "focusValue": "Backend y software de ingeniería",
+    "locationLabel": "Ubicación",
+    "locationValue": "Ciudad de México, México",
+    "languagesLabel": "Idiomas",
+    "languagesValue": "Español e inglés (B2)",
+    "educationLabel": "Formación",
+    "educationValue": "Máster en Ingeniería Eléctrica · Instrumentación"
+  },
+  "skills": {
+    "eyebrow": "CAPACIDADES TÉCNICAS",
+    "title": "Habilidades técnicas",
+    "description": "Tecnologías y herramientas aplicadas en proyectos de software, instrumentación y procesamiento de datos.",
+    "groups": {
+      "backend": {
+        "title": "Ingeniería Backend",
+        "description": "Sistemas backend, APIs y arquitectura de aplicaciones."
+      },
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "description": "Aplicaciones web modernas e interfaces de usuario."
+      },
+      "data": {
+        "title": "Bases de datos y datos",
+        "description": "Almacenamiento, procesamiento y análisis de datos."
+      },
+      "instrumentation": {
+        "title": "Instrumentación y sistemas embebidos",
+        "description": "Sistemas de medición e integración de hardware."
+      },
+      "cloud": {
+        "title": "Cloud y DevOps",
+        "description": "Infraestructura, automatización y despliegue."
+      },
+      "practices": {
+        "title": "Ingeniería de software",
+        "description": "Arquitectura, calidad y buenas prácticas de desarrollo."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "TRABAJO SELECCIONADO",
+    "title": "Proyectos destacados",
+    "description": "Una selección de proyectos de software e ingeniería que demuestra arquitectura, implementación y resolución de problemas.",
+    "filters": {
+      "all": "Todos",
+      "backend": "Backend",
+      "instrumentation": "Instrumentación",
+      "embedded": "Sistemas embebidos",
+      "research": "Investigación"
+    },
+    "status": {
+      "completed": "Completado",
+      "in-progress": "En desarrollo",
+      "prototype": "Prototipo",
+      "research": "Investigación"
+    },
+    "viewDetails": "Ver detalles",
+    "viewProject": "Ver proyecto",
+    "noResults": "No hay proyectos para esta categoría.",
+    "showing": "Mostrando {{count}} proyectos",
+    "back": "Volver a proyectos",
+    "featured": "PROYECTO DESTACADO",
+    "overview": "Descripción general",
+    "problem": "El problema",
+    "solution": "Solución",
+    "features": "Funcionalidades principales",
+    "architecture": "Arquitectura",
+    "technologies": "Tecnologías",
+    "highlights": "Aspectos técnicos destacados",
+    "repository": "Repositorio",
+    "demo": "Demo en vivo",
+    "categories": {
+      "backend": "Backend",
+      "instrumentation": "Instrumentación",
+      "embedded": "Sistemas embebidos",
+      "research": "Investigación"
+    },
+    "items": {
+      "medlab": {
+        "description": "Plataforma de gestión de laboratorios biomédicos inspirada en un LIMS, que integra muestras, pruebas, equipos, informes y flujos operativos.",
+        "overview": "MedLab Platform es un sistema de gestión de laboratorios biomédicos diseñado para organizar operaciones, administrar muestras y pruebas, supervisar equipos biomédicos y generar informes técnicos.",
+        "problem": "Los laboratorios biomédicos necesitan flujos de trabajo fiables para realizar el seguimiento de muestras, pruebas, equipos y resultados. Gestionar estos procesos de manera independiente dificulta la trazabilidad y el control operativo.",
+        "solution": "Una plataforma backend modular que centraliza las entidades del laboratorio y sus flujos operativos mediante una API REST.",
+        "features": [
+          "Gestión de pacientes y muestras.",
+          "Gestión de pruebas y resultados de laboratorio.",
+          "Gestión del ciclo de vida de equipos biomédicos.",
+          "Calibración y mantenimiento de equipos.",
+          "Control de acceso basado en roles.",
+          "Autenticación JWT.",
+          "Registro de auditoría.",
+          "Informes PDF y exportación de datos.",
+          "Procesamiento en segundo plano con Celery.",
+          "Pruebas automatizadas e integración continua."
+        ],
+        "architecture": "Router → Service → Repository → SQLAlchemy → PostgreSQL. Las operaciones en segundo plano se procesan mediante trabajadores Celery e infraestructura compatible con Redis.",
+        "highlights": [
+          "Arquitectura modular por capas.",
+          "Autenticación y RBAC.",
+          "Migraciones de base de datos.",
+          "Procesamiento asíncrono.",
+          "Pruebas automatizadas.",
+          "Despliegue mediante contenedores."
+        ]
+      },
+      "instrumenthub": {
+        "description": "Plataforma de adquisición, procesamiento, almacenamiento y visualización en tiempo real de datos procedentes de instrumentos y sensores biomédicos.",
+        "overview": "InstrumentHub integra comunicación con instrumentos, adquisición de datos, procesamiento de señales, almacenamiento temporal y monitorización en tiempo real.",
+        "problem": "La instrumentación biomédica requiere procesos fiables de adquisición, análisis de señales, persistencia de mediciones y visualización de datos.",
+        "solution": "Una plataforma que integra servicios de adquisición, módulos de procesamiento, almacenamiento de series temporales y un dashboard web.",
+        "features": [
+          "Simulación de sensores e instrumentos.",
+          "Adquisición y almacenamiento temporal de datos.",
+          "Procesamiento de señales y análisis FFT.",
+          "Detección de anomalías.",
+          "Análisis de sensores FBG.",
+          "Almacenamiento con TimescaleDB.",
+          "API REST.",
+          "Comunicación en tiempo real mediante WebSockets.",
+          "Dashboard interactivo de monitorización."
+        ],
+        "architecture": "Instrumento → Acquisition Manager → Procesamiento de mediciones y señales → Almacenamiento temporal → REST API / WebSocket → React Dashboard.",
+        "highlights": [
+          "Abstracción modular de instrumentos.",
+          "Adquisición en tiempo real.",
+          "Procesamiento de señales.",
+          "Almacenamiento de series temporales.",
+          "Análisis FBG.",
+          "Visualización interactiva."
+        ]
+      },
+      "digital-thermometer": {
+        "description": "Sistema embebido de adquisición y visualización de temperatura desarrollado con microcontrolador e interfaces periféricas.",
+        "overview": "Proyecto de ingeniería embebida centrado en adquirir mediciones de temperatura y mostrar los valores obtenidos.",
+        "problem": "La monitorización de temperatura requiere integrar adquisición mediante sensores, procesamiento con microcontroladores y presentación de resultados.",
+        "solution": "Implementación embebida utilizando un microcontrolador PIC e interfaces de comunicación periférica.",
+        "features": [
+          "Adquisición de temperatura.",
+          "Medición mediante ADC.",
+          "Procesamiento con microcontrolador.",
+          "Comunicación con periféricos.",
+          "Visualización digital de mediciones."
+        ],
+        "architecture": "Sensor → ADC → PIC18F4550 → Procesamiento → Interfaz de visualización.",
+        "highlights": [
+          "Programación de microcontroladores.",
+          "Adquisición mediante sensores.",
+          "Integración de periféricos.",
+          "Diseño de sistemas embebidos."
+        ]
+      },
+      "fbg-research": {
+        "description": "Investigación sobre redes de Bragg inducidas por UV, caracterización experimental y desacoplamiento temperatura-deformación.",
+        "overview": "Investigación centrada en sensores de fibra óptica basados en redes de Bragg y su caracterización para aplicaciones de medición.",
+        "problem": "La temperatura y la deformación mecánica influyen en la respuesta espectral de los sensores FBG, lo que requiere metodologías de caracterización y desacoplamiento.",
+        "solution": "Enfoque experimental y analítico que integra instrumentación óptica, caracterización y análisis de señales.",
+        "features": [
+          "Caracterización de sensores FBG.",
+          "Análisis de respuesta óptica.",
+          "Estudios de temperatura y deformación.",
+          "Procesamiento de datos experimentales.",
+          "Análisis de señales."
+        ],
+        "architecture": "Sensor óptico → Instrumentación de medición → Adquisición de datos → Procesamiento de señales → Análisis experimental.",
+        "highlights": [
+          "Instrumentación de fibra óptica.",
+          "Caracterización experimental.",
+          "Desacoplamiento temperatura-deformación."
+        ]
+      }
+    }
+  },
+  "education": {
+    "eyebrow": "FORMACIÓN ACADÉMICA",
+    "title": "Educación",
+    "description": "Formación académica en ingeniería biomédica, ingeniería eléctrica e instrumentación.",
+    "items": {
+      "biomedical-engineering": {
+        "degree": "Ingeniería Biomédica",
+        "description": "Formación universitaria en sistemas biomédicos y aplicaciones de ingeniería."
+      },
+      "master-electrical-engineering": {
+        "degree": "Máster en Ingeniería Eléctrica · Instrumentación",
+        "description": "Estudios de posgrado especializados en instrumentación, sistemas de medición e investigación en ingeniería."
+      }
+    }
+  },
+
+  "experience": {
+    "eyebrow": "TRAYECTORIA PROFESIONAL",
+    "title": "Experiencia",
+    "description": "Experiencia profesional en desarrollo de software, ingeniería biomédica, instrumentación y entornos de investigación.",
+    "items": {
+      "icat-unam": {
+        "position": "Desarrollador Backend – Automatización y Aplicaciones de Datos",
+        "description": "Desarrollo de soluciones de software para aplicaciones de ingeniería, entornos técnicos y sistemas de instrumentación orientados a la investigación.",
+        "responsibilities": [
+          "Desarrollo de soluciones de software utilizando Python, C y C# para aplicaciones de ingeniería y entornos técnicos.",
+          "Implementación de flujos de procesamiento y análisis de datos, automatización de tareas y gestión de información.",
+          "Aplicación de programación orientada a objetos, depuración, pruebas, validación y documentación técnica.",
+          "Colaboración en proyectos de investigación e instrumentación con equipos multidisciplinarios."
+        ]
+      },
+      "cie": {
+        "position": "Especialista Biomédico – Técnico de Equipos de Diagnóstico Médico",
+        "description": "Actividades de desarrollo técnico, programación y validación de sistemas electrónicos y equipos de diagnóstico médico.",
+        "responsibilities": [
+          "Programación y pruebas de sistemas electrónicos utilizados en equipos de diagnóstico médico.",
+          "Desarrollo de herramientas de análisis y validación, incluyendo automatización parcial de procesos de medición y documentación técnica.",
+          "Participación en proyectos de investigación y desarrollo aplicando conocimientos de ingeniería y programación."
+        ]
+      },
+      "cneuro": {
+        "position": "Ingeniero Biomédico – Reserva Científica",
+        "description": "Actividades de ingeniería e investigación relacionadas con dispositivos biomédicos, sistemas embebidos y automatización de laboratorio.",
+        "responsibilities": [
+          "Programación de microcontroladores PIC y STM32 en C para el desarrollo y validación de soluciones biomédicas.",
+          "Automatización de procesos de laboratorio, análisis de datos experimentales y preparación de documentación técnica.",
+          "Participación en el desarrollo y validación de dispositivos biomédicos y soluciones tecnológicas.",
+          "Colaboración con equipos multidisciplinarios de ingeniería e investigación."
+        ]
+      }
+    }
+  },
+  "research": {
+    "eyebrow": "INVESTIGACIÓN E INGENIERÍA",
+    "title": "Investigación",
+    "description": "Trabajo en instrumentación óptica, sensores de fibra, sistemas de medición y procesamiento de señales.",
+    "publications": "Publicaciones",
+    "publicationType": "PUBLICACIÓN CIENTÍFICA",
+    "doi": "DOI",
+    "viewPublication": "Ver publicación",
+    "viewDoi": "Consultar DOI",
+    "items": {
+      "fbg-optical-sensing": {
+        "title": "Sensores de redes de Bragg en fibra e instrumentación óptica",
+        "description": "Investigación centrada en tecnologías de sensores de fibra óptica, especialmente sensores Fiber Bragg Grating (FBG), su caracterización experimental y sus aplicaciones en sistemas de medición. Incluye el estudio de redes inducidas por UV, caracterización de la respuesta del sensor y desacoplamiento temperatura-deformación.",
+        "topics": [
+          "Redes de Bragg en fibra (FBG)",
+          "Sensores de fibra óptica",
+          "Redes inducidas por UV",
+          "Caracterización experimental",
+          "Desacoplamiento temperatura-deformación",
+          "Instrumentación",
+          "Análisis de señales"
+        ]
+      }
+    },
+    "publication": {
+      "event": "Congreso Latinoamericano de Control Automático",
+      "date": "17 de octubre de 2025",
+      "title": "State-estimation as a virtual sensing scheme in a heat conduction experiment"
+    },
+    "researchFocus": "LÍNEA DE INVESTIGACIÓN",
+    "visualLabel": "FBG · SENSORES ÓPTICOS",
+    "visualCaption": "REDES DE BRAGG EN FIBRA · INSTRUMENTACIÓN ÓPTICA",
+    "explore": "Explorar publicaciones",
+    "scientificOutput": "PRODUCCIÓN CIENTÍFICA",
+    "publicationDescription": "Contribuciones científicas y publicaciones académicas relacionadas con ingeniería e investigación aplicada.",
+    "researchNote": "Las actividades de investigación se centran en instrumentación óptica, caracterización de sensores, mediciones experimentales y aplicaciones de ingeniería."
+  },
+  "contact": {
+    "eyebrow": "CONTACTO",
+    "title": "Construyamos algo significativo juntos.",
+    "description": "Estoy abierto a oportunidades profesionales relacionadas con desarrollo backend, ingeniería de software e instrumentación.",
+    "button": "Contactar",
+    "email": "Correo electrónico",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "description": "Software Engineering · Biomedical Instrumentation",
+    "rights": "Todos los derechos reservados.",
+    "built": "Desarrollado con React y TypeScript."
+  },
+  "theme": {
+    "label": "Apariencia",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "change": "Cambiar apariencia"
+  },
+  "language": {
+    "label": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "change": "Cambiar idioma"
+  },
+  "seo": {
+    "homeTitle": "Angel David Núñez Paredes | Software Engineer",
+    "homeDescription": "Software Engineer especializado en Python Backend Development, ingeniería biomédica e instrumentación.",
+    "projectTitle": "{{project}} | Angel David Núñez Paredes",
+    "projectDescription": "Detalles técnicos, arquitectura y tecnologías del proyecto {{project}}."
+  },
+  "errors": {
+    "notFound": "No se encontró el proyecto solicitado.",
+    "goHome": "Volver al inicio"
+  }
 }

@@ -1,50 +1,62 @@
 import { BriefcaseBusiness, CalendarDays, MapPin } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 import { experience } from '../../data/experience';
 
 import { SectionHeading } from '../../components/common/SectionHeading';
 
 export function ExperienceSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="experience" className="portfolio-section">
       <SectionHeading
-        eyebrow="PROFESSIONAL JOURNEY"
-        title="Professional Experience"
-        description="My professional background combines software development, biomedical engineering, instrumentation and applied research."
+        eyebrow={t('experience.eyebrow')}
+        title={t('experience.title')}
+        description={t('experience.description')}
       />
 
       <div className="timeline">
-        {experience.map((item) => (
-          <article className="timeline-item" key={item.id}>
-            <div className="timeline-marker">
-              <BriefcaseBusiness size={19} />
-            </div>
+        {experience.map((item) => {
+          const key = `experience.items.${item.id}`;
 
-            <div className="timeline-period">
-              <CalendarDays size={13} />
-              <span>{item.period}</span>
-            </div>
+          const responsibilities = t(`${key}.responsibilities`, {
+            returnObjects: true,
+          }) as string[];
 
-            <div className="timeline-content">
-              <h3>{item.position}</h3>
+          return (
+            <article className="timeline-item" key={item.id}>
+              <div className="timeline-marker">
+                <BriefcaseBusiness size={19} />
+              </div>
 
-              <strong>{item.organization}</strong>
+              <div className="timeline-period">
+                <CalendarDays size={13} />
+                <span>{item.period}</span>
+              </div>
 
-              <span className="timeline-location">
-                <MapPin size={13} />
-                {item.location}
-              </span>
+              <div className="timeline-content">
+                <h3>{t(`${key}.position`)}</h3>
 
-              <p>{item.description}</p>
+                <strong>{item.organization}</strong>
 
-              <ul className="experience-list">
-                {item.responsibilities.map((responsibility) => (
-                  <li key={responsibility}>{responsibility}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
+                <span className="timeline-location">
+                  <MapPin size={13} />
+                  {item.location}
+                </span>
+
+                <p>{t(`${key}.description`)}</p>
+
+                <ul className="experience-list">
+                  {responsibilities.map((responsibility) => (
+                    <li key={responsibility}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

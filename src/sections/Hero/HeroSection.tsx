@@ -8,52 +8,57 @@ import {
   Languages,
 } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 import { profile } from '../../data/profile';
 import { SocialLinks } from '../../components/common/SocialLinks';
 
 export function HeroSection() {
+  const { t, i18n } = useTranslation();
+
+  const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
+
+  const cvPath = `/documents/cv-${language}.pdf`;
+
+  const cvFilename =
+    language === 'es'
+      ? 'Angel_David_Nunez_CV_ES.pdf'
+      : 'Angel_David_Nunez_CV_EN.pdf';
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-content">
-        <div className="hero-eyebrow">SOFTWARE · ENGINEERING · RESEARCH</div>
+        <div className="hero-eyebrow">{t('hero.eyebrow')}</div>
 
         <h1>
-          Building software
+          {t('hero.headingStart')}
           <br />
-          for <span>real-world</span>
+          <span>{t('hero.headingHighlight')}</span>
           <br />
-          engineering.
+          {t('hero.headingEnd')}
         </h1>
 
-        <p className="hero-role">{profile.role}</p>
+        <p className="hero-role">{t('hero.role')}</p>
 
-        <p className="hero-description">{profile.introduction}</p>
+        <p className="hero-description">{t('hero.description')}</p>
 
         <div className="hero-actions">
           <a
-            href="/documents/cv-en.pdf"
-            download="Angel_David_Nunez_CV_EN.pdf"
+            href={cvPath}
+            download={cvFilename}
             className="button button-primary"
           >
             <Download size={17} />
-            Download CV
+            {t('hero.downloadCv')}
           </a>
 
-          <a
-            href="/documents/cv-es.pdf"
-            download="Angel_David_Nunez_CV_ES.pdf"
-            className="button button-secondary"
-          >
-            <Download size={17} />
-            CV en español
-          </a>
-          <a href="#projects" className="button button-primary">
-            Explore projects
+          <a href="#projects" className="button button-secondary">
+            {t('projects.title')}
             <ArrowUpRight size={17} />
           </a>
 
           <a href="#contact" className="button button-secondary">
-            Get in touch
+            {t('hero.contact')}
           </a>
         </div>
 
@@ -61,7 +66,7 @@ export function HeroSection() {
 
         <a href="#about" className="scroll-indicator">
           <ArrowDown size={15} />
-          Scroll to explore
+          {t('hero.scroll')}
         </a>
       </div>
 
@@ -70,18 +75,17 @@ export function HeroSection() {
           <div className="profile-photo-container">
             <img
               src="/images/profile.webp"
-              alt="Professional portrait of Angel David Núñez Paredes"
+              alt={profile.fullName}
               className="profile-photo"
               width="160"
               height="160"
               fetchPriority="high"
             />
           </div>
-          {/* <div className="avatar">ADN</div> */}
 
           <span className="availability">
             <span />
-            {profile.availability}
+            {t('hero.available')}
           </span>
         </div>
 
@@ -89,26 +93,26 @@ export function HeroSection() {
 
         <div className="profile-location">
           <MapPin size={15} />
-          {profile.location}
+          {t('hero.location')}
         </div>
 
         <div className="profile-metrics">
           <div>
             <Code2 size={19} />
             <strong>02</strong>
-            <span>Featured platforms</span>
+            <span>{t('hero.metrics.software')}</span>
           </div>
 
           <div>
             <FlaskConical size={19} />
             <strong>03</strong>
-            <span>Engineering areas</span>
+            <span>{t('hero.metrics.instrumentation')}</span>
           </div>
 
           <div>
             <Languages size={19} />
             <strong>ES/EN</strong>
-            <span>Languages</span>
+            <span>{t('hero.metrics.engineering')}</span>
           </div>
         </div>
       </aside>

@@ -7,6 +7,8 @@ import {
   FileText,
 } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 import { research, publications } from '../../data/research';
 
 import { SectionHeading } from '../../components/common/SectionHeading';
@@ -14,70 +16,73 @@ import { SectionHeading } from '../../components/common/SectionHeading';
 import { Tag } from '../../components/common/Tag';
 
 export function ResearchSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="research" className="portfolio-section">
       <SectionHeading
-        eyebrow="RESEARCH & SCIENTIFIC CONTRIBUTIONS"
-        title="Research and Publications"
-        description="My research interests connect biomedical instrumentation, optical sensing, experimental measurement systems and engineering applications."
+        eyebrow={t('research.eyebrow')}
+        title={t('research.title')}
+        description={t('research.description')}
       />
-
-      {/* RESEARCH FOCUS */}
 
       <div className="research-grid">
         <div className="research-visual">
           <div className="research-orbit orbit-one" />
-
           <div className="research-orbit orbit-two" />
 
           <div className="research-visual-content">
             <Waves size={64} strokeWidth={1} />
-
-            <span>FBG · OPTICAL SENSING</span>
+            <span>{t('research.visualLabel')}</span>
           </div>
 
           <span className="research-visual-caption">
-            FIBER BRAGG GRATING · OPTICAL INSTRUMENTATION
+            {t('research.visualCaption')}
           </span>
         </div>
 
         <div className="research-content">
-          <span className="section-eyebrow">RESEARCH FOCUS</span>
+          <span className="section-eyebrow">{t('research.researchFocus')}</span>
 
-          {research.map((item) => (
-            <div key={item.id}>
-              <h3>{item.title}</h3>
+          {research.map((item) => {
+            const key = `research.items.${item.id}`;
 
-              <p>{item.description}</p>
+            const topics = t(`${key}.topics`, {
+              returnObjects: true,
+            }) as string[];
 
-              <div className="research-topics">
-                {item.topics.map((topic) => (
-                  <Tag key={topic}>{topic}</Tag>
-                ))}
+            return (
+              <div key={item.id}>
+                <h3>{t(`${key}.title`)}</h3>
+
+                <p>{t(`${key}.description`)}</p>
+
+                <div className="research-topics">
+                  {topics.map((topic) => (
+                    <Tag key={topic}>{topic}</Tag>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
 
           <a href="#publications" className="research-link">
-            Explore publications
+            {t('research.explore')}
             <ArrowUpRight size={16} />
           </a>
         </div>
       </div>
 
-      {/* PUBLICATIONS */}
-
       <div id="publications" className="publications-section">
         <div className="publications-heading">
           <div>
-            <span className="section-eyebrow">SCIENTIFIC OUTPUT</span>
+            <span className="section-eyebrow">
+              {t('research.scientificOutput')}
+            </span>
 
-            <h3>Publications</h3>
+            <h3>{t('research.publications')}</h3>
 
-            <p>
-              Scientific contributions and academic publications related to
-              engineering and applied research.
-            </p>
+            <p>{t('research.publicationDescription')}</p>
           </div>
 
           <BookOpen size={27} />
@@ -91,16 +96,20 @@ export function ResearchSection() {
               </div>
 
               <div className="publication-content">
-                <span className="publication-type">CONFERENCE PUBLICATION</span>
+                <span className="publication-type">
+                  {t('research.publicationType')}
+                </span>
 
-                <h4>{publication.title}</h4>
+                <h4>{t('research.publication.title')}</h4>
 
-                <strong>{publication.event}</strong>
+                <strong>{t('research.publication.event')}</strong>
 
-                <span className="publication-date">{publication.date}</span>
+                <span className="publication-date">
+                  {t('research.publication.date')}
+                </span>
 
                 <div className="publication-doi">
-                  <span>DOI:</span>
+                  <span>{t('research.doi')}:</span>
 
                   <a
                     href={publication.doiUrl}
@@ -118,7 +127,7 @@ export function ResearchSection() {
                     rel="noopener noreferrer"
                     className="publication-link"
                   >
-                    Show publication
+                    {t('research.viewPublication')}
                     <ExternalLink size={15} />
                   </a>
 
@@ -128,7 +137,7 @@ export function ResearchSection() {
                     rel="noopener noreferrer"
                     className="publication-link secondary"
                   >
-                    View DOI
+                    {t('research.viewDoi')}
                     <ArrowUpRight size={15} />
                   </a>
                 </div>
@@ -138,23 +147,13 @@ export function ResearchSection() {
         </div>
       </div>
 
-      {/* RESEARCH NOTE */}
-
       <div className="research-note">
         <Microscope size={19} />
 
-        <p>
-          Research activities focus on optical instrumentation, sensor
-          characterization, experimental measurements and engineering
-          applications.
-        </p>
+        <p>{t('research.researchNote')}</p>
 
-        <ActivityIcon />
+        <Waves size={19} aria-hidden="true" />
       </div>
     </section>
   );
-}
-
-function ActivityIcon() {
-  return <Waves size={19} aria-hidden="true" />;
 }

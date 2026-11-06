@@ -7,6 +7,8 @@ import {
   Layers,
 } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 import { skillGroups } from '../../data/skills';
 
 import { SectionHeading } from '../../components/common/SectionHeading';
@@ -22,12 +24,14 @@ const icons = {
 };
 
 export function SkillsSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="skills" className="portfolio-section">
       <SectionHeading
-        eyebrow="WHAT I WORK WITH"
-        title="Technical skills"
-        description="Technologies grouped by the engineering problems I use them to solve — not percentage ratings."
+        eyebrow={t('skills.eyebrow')}
+        title={t('skills.title')}
+        description={t('skills.description')}
       />
 
       <div className="skills-grid">
@@ -40,9 +44,9 @@ export function SkillsSection() {
                 <Icon size={22} />
               </div>
 
-              <h3>{group.title}</h3>
+              <h3>{t(`skills.groups.${group.id}.title`)}</h3>
 
-              <p>{group.description}</p>
+              <p>{t(`skills.groups.${group.id}.description`)}</p>
 
               <div className="skill-tags">
                 {group.technologies.map((technology) => (

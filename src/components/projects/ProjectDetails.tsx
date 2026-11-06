@@ -10,6 +10,8 @@ import { FaGithub } from 'react-icons/fa';
 
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 import type { Project } from '../../types/portfolio';
 
 import { Tag } from '../common/Tag';
@@ -19,25 +21,37 @@ interface ProjectDetailsProps {
 }
 
 export function ProjectDetails({ project }: ProjectDetailsProps) {
+  const { t } = useTranslation();
+
+  const key = `projects.items.${project.id}`;
+
+  const features = t(`${key}.features`, {
+    returnObjects: true,
+  }) as string[];
+
+  const highlights = t(`${key}.highlights`, {
+    returnObjects: true,
+  }) as string[];
+
   return (
     <article className="project-details">
       <Link to="/#projects" className="back-link">
         <ArrowLeft size={16} />
-        Back to projects
+        {t('projects.back')}
       </Link>
 
       <header className="project-details-header">
-        <span className="section-eyebrow">FEATURED PROJECT</span>
+        <span className="section-eyebrow">{t('projects.featured')}</span>
 
         <div className="project-details-title-row">
           <h1>{project.title}</h1>
 
           <span className={`project-status status-${project.status}`}>
-            {project.status.replace('-', ' ')}
+            {t(`projects.status.${project.status}`)}
           </span>
         </div>
 
-        <p>{project.description}</p>
+        <p>{t(`${key}.description`)}</p>
 
         <div className="project-details-actions">
           {project.repository && (
@@ -48,7 +62,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               className="button button-primary"
             >
               <FaGithub size={17} />
-              Repository
+              {t('projects.repository')}
               <ArrowUpRight size={15} />
             </a>
           )}
@@ -60,7 +74,8 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               rel="noopener noreferrer"
               className="button button-secondary"
             >
-              Live demo <ArrowUpRight size={15} />
+              {t('projects.demo')}
+              <ArrowUpRight size={15} />
             </a>
           )}
         </div>
@@ -69,25 +84,25 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
       <div className="details-grid">
         <section className="details-main">
           <div className="details-block">
-            <h2>Project overview</h2>
-            <p>{project.overview}</p>
+            <h2>{t('projects.overview')}</h2>
+            <p>{t(`${key}.overview`)}</p>
           </div>
 
           <div className="details-block">
-            <h2>The problem</h2>
-            <p>{project.problem}</p>
+            <h2>{t('projects.problem')}</h2>
+            <p>{t(`${key}.problem`)}</p>
           </div>
 
           <div className="details-block">
-            <h2>Solution</h2>
-            <p>{project.solution}</p>
+            <h2>{t('projects.solution')}</h2>
+            <p>{t(`${key}.solution`)}</p>
           </div>
 
           <div className="details-block">
-            <h2>Key features</h2>
+            <h2>{t('projects.features')}</h2>
 
             <ul className="feature-list">
-              {project.features.map((feature) => (
+              {features.map((feature) => (
                 <li key={feature}>
                   <CheckCircle2 size={17} />
                   {feature}
@@ -97,11 +112,11 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           </div>
 
           <div className="details-block">
-            <h2>Architecture</h2>
+            <h2>{t('projects.architecture')}</h2>
 
             <div className="architecture-panel">
               <Layers size={21} />
-              <p>{project.architecture}</p>
+              <p>{t(`${key}.architecture`)}</p>
             </div>
           </div>
         </section>
@@ -110,7 +125,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           <div className="surface-card">
             <Code2 size={21} />
 
-            <h3>Technologies</h3>
+            <h3>{t('projects.technologies')}</h3>
 
             <div className="project-tags">
               {project.technologies.map((technology) => (
@@ -120,10 +135,10 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           </div>
 
           <div className="surface-card">
-            <h3>Technical highlights</h3>
+            <h3>{t('projects.highlights')}</h3>
 
             <ul className="highlight-list">
-              {project.highlights.map((highlight) => (
+              {highlights.map((highlight) => (
                 <li key={highlight}>{highlight}</li>
               ))}
             </ul>

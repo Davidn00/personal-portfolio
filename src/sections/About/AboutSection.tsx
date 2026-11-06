@@ -5,49 +5,49 @@ import {
   Languages,
 } from 'lucide-react';
 
-import { SectionHeading } from '../../components/common/SectionHeading';
-import { profile } from '../../data/profile';
+import { useTranslation } from 'react-i18next';
 
-const information = [
-  {
-    label: 'Professional focus',
-    value: profile.professionalFocus,
-    icon: BriefcaseBusiness,
-  },
-  {
-    label: 'Education',
-    value: 'M.Sc. Electrical Engineering · Instrumentation',
-    icon: GraduationCap,
-  },
-  {
-    label: 'Location',
-    value: profile.location,
-    icon: MapPin,
-  },
-  {
-    label: 'Languages',
-    value: profile.languages.join(' · '),
-    icon: Languages,
-  },
-];
+import { SectionHeading } from '../../components/common/SectionHeading';
 
 export function AboutSection() {
+  const { t } = useTranslation();
+
+  const information = [
+    {
+      label: t('about.focusLabel'),
+      value: t('about.focusValue'),
+      icon: BriefcaseBusiness,
+    },
+    {
+      label: t('about.educationLabel'),
+      value: t('about.educationValue'),
+      icon: GraduationCap,
+    },
+    {
+      label: t('about.locationLabel'),
+      value: t('about.locationValue'),
+      icon: MapPin,
+    },
+    {
+      label: t('about.languagesLabel'),
+      value: t('about.languagesValue'),
+      icon: Languages,
+    },
+  ];
+
   return (
     <section id="about" className="portfolio-section">
       <SectionHeading
-        eyebrow="A LITTLE ABOUT ME"
-        title="Engineering mindset. Software-first approach."
-        description="A hybrid profile built around software engineering, biomedical systems and applied research."
+        eyebrow={t('about.eyebrow')}
+        title={t('about.title')}
+        description={t('about.description')}
       />
 
       <div className="about-grid">
         <div className="about-copy">
-          <p>{profile.about}</p>
+          <p>{t('about.paragraph1')}</p>
 
-          <p>
-            My interests include backend architecture, engineering applications,
-            data acquisition, instrumentation and scientific software.
-          </p>
+          <p>{t('about.paragraph2')}</p>
         </div>
 
         <div className="about-information">

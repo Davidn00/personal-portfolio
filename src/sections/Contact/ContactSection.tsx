@@ -1,44 +1,51 @@
 import { ArrowUpRight, Download, Mail, MapPin } from 'lucide-react';
+
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+
+import { useTranslation } from 'react-i18next';
 
 import { profile } from '../../data/profile';
 
 export function ContactSection() {
+  const { t, i18n } = useTranslation();
+
+  const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
+
+  const cvPath = `/documents/cv-${language}.pdf`;
+
+  const cvFilename =
+    language === 'es'
+      ? 'Angel_David_Nunez_CV_ES.pdf'
+      : 'Angel_David_Nunez_CV_EN.pdf';
+
   return (
     <section id="contact" className="portfolio-section">
       <div className="contact-panel">
         <div className="contact-content">
-          <span className="contact-eyebrow">GET IN TOUCH</span>
+          <span className="contact-eyebrow">{t('contact.eyebrow')}</span>
 
-          <h2>Let's build something meaningful together.</h2>
+          <h2>{t('contact.title')}</h2>
 
-          <p>
-            I am interested in software engineering roles and projects involving
-            backend systems, data and engineering applications.
-          </p>
+          <p>{t('contact.description')}</p>
 
           <div className="contact-location">
             <MapPin size={16} />
-            {profile.location}
+            {t('hero.location')}
           </div>
         </div>
 
         <a href={`mailto:${profile.email}`} className="button contact-button">
-          Contact me
+          {t('contact.button')}
           <ArrowUpRight size={18} />
         </a>
       </div>
 
       <div className="contact-links">
-        <a href="/documents/cv-en.pdf" download="Angel_David_Nunez_CV_EN.pdf">
+        <a href={cvPath} download={cvFilename}>
           <Download size={18} />
-          Download English CV
+          {t('hero.downloadCv')}
         </a>
 
-        <a href="/documents/cv-es.pdf" download="Angel_David_Nunez_CV_ES.pdf">
-          <Download size={18} />
-          Descargar CV en español
-        </a>
         <a href={`mailto:${profile.email}`}>
           <Mail size={18} />
           {profile.email}
@@ -50,7 +57,7 @@ export function ContactSection() {
           rel="noopener noreferrer"
         >
           <FaGithub size={18} />
-          GitHub
+          {t('contact.github')}
         </a>
 
         <a
@@ -59,7 +66,7 @@ export function ContactSection() {
           rel="noopener noreferrer"
         >
           <FaLinkedin size={18} />
-          LinkedIn
+          {t('contact.linkedin')}
         </a>
       </div>
     </section>
