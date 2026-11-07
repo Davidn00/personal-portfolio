@@ -1,5 +1,5 @@
 export type ProjectCategory =
-  'backend' | 'instrumentation' | 'embedded' | 'research';
+  'backend' | 'frontend' | 'instrumentation' | 'saas' | 'embedded' | 'research';
 
 export type ProjectStatus =
   'completed' | 'in-progress' | 'prototype' | 'research';

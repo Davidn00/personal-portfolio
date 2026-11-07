@@ -12,7 +12,9 @@ interface ProjectFilterProps {
 const filters: ProjectFilterValue[] = [
   'all',
   'backend',
+  'frontend',
   'instrumentation',
+  'saas',
   'embedded',
   'research',
 ];

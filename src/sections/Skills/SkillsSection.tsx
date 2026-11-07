@@ -1,10 +1,15 @@
 import {
-  Code2,
-  Monitor,
-  Database,
   Activity,
+  ChartNoAxesCombined,
   Cloud,
+  Code2,
+  Cpu,
+  Database,
   Layers,
+  Monitor,
+  Server,
+  ShieldCheck,
+  Workflow,
 } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
@@ -21,6 +26,11 @@ const icons = {
   activity: Activity,
   cloud: Cloud,
   layers: Layers,
+  server: Server,
+  workflow: Workflow,
+  'shield-check': ShieldCheck,
+  'chart-no-axes-combined': ChartNoAxesCombined,
+  cpu: Cpu,
 };
 
 export function SkillsSection() {
@@ -36,7 +46,7 @@ export function SkillsSection() {
 
       <div className="skills-grid">
         {skillGroups.map((group) => {
-          const Icon = icons[group.icon as keyof typeof icons];
+          const Icon = icons[group.icon as keyof typeof icons] ?? Code2;
 
           return (
             <article className="skill-card" key={group.id}>

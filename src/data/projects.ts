@@ -2,6 +2,98 @@ import type { Project } from '../types/portfolio';
 
 export const projects: Project[] = [
   {
+    id: 'workflow-saas',
+    slug: 'workflow-saas',
+    title: 'WorkFlow SaaS',
+    shortTitle: 'WorkFlow',
+
+    category: ['backend', 'frontend', 'saas'],
+
+    status: 'in-progress',
+
+    description:
+      'A multi-tenant SaaS platform for business operations, combining lightweight CRM, task management and configurable approval workflows with secure organization-level access control.',
+
+    overview:
+      'WorkFlow SaaS is a business management platform designed to help small companies centralize customer relationships, team collaboration, task assignments and approval processes. It follows a modular monolith architecture with a Python/FastAPI backend, PostgreSQL database, asynchronous workers and a React-based frontend.',
+
+    problem:
+      'Small businesses often manage customers, employees, tasks and approval processes across disconnected tools. This creates operational fragmentation, limited traceability, inconsistent workflows and security challenges when multiple organizations share the same platform.',
+
+    solution:
+      'A multi-tenant SaaS application that centralizes business operations through a modular REST API and an integrated web interface. The platform is designed around organization-level data isolation, granular permissions, explicit business rules, versioned approval workflows and asynchronous processing.',
+
+    features: [
+      'Multi-tenant architecture with organization-level data isolation.',
+      'User authentication and secure session management.',
+      'Organization management, memberships and invitations.',
+      'Role-based access control (RBAC) and granular permissions.',
+      'CRM module for customers, contacts and sales opportunities.',
+      'Task management with priorities, assignments and deadlines.',
+      'Configurable and versioned business workflows.',
+      'Approval management with sequential decision processes.',
+      'Transactional operations and concurrency control.',
+      'Audit logging and operational traceability.',
+      'Asynchronous notifications and background processing.',
+      'CSV exports and scheduled tasks.',
+      'Business dashboard with operational metrics.',
+      'REST API with OpenAPI documentation.',
+      'Automated testing and CI/CD pipelines.',
+      'Docker-based development and AWS deployment strategy.',
+    ],
+
+    architecture:
+      'Modular Monolith: React + TypeScript frontend → HTTPS / REST → FastAPI API v1 → Authentication → Authorization / Tenant Context → Application Services → SQLAlchemy → PostgreSQL. Celery workers use Redis for asynchronous jobs, notifications, exports and scheduled tasks.',
+
+    technologies: [
+      'Python 3.12',
+      'FastAPI',
+      'PostgreSQL',
+      'SQLAlchemy 2.x',
+      'Alembic',
+      'Pydantic v2',
+      'JWT',
+      'OAuth 2.0 / OIDC',
+      'RBAC',
+      'Celery',
+      'Redis',
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Docker',
+      'Docker Compose',
+      'Pytest',
+      'HTTPX',
+      'Vitest',
+      'React Testing Library',
+      'Ruff',
+      'mypy',
+      'GitHub Actions',
+      'AWS',
+      'Terraform',
+      'OpenTelemetry',
+    ],
+
+    highlights: [
+      'Modular monolith architecture.',
+      'Multi-tenant data isolation.',
+      'Granular authorization and RBAC.',
+      'Business-oriented domain modeling.',
+      'Versioned workflows and approval engine.',
+      'Transactional integrity and concurrency control.',
+      'Asynchronous processing with Celery and Redis.',
+      'Automated testing and security validation.',
+      'Containerization with Docker.',
+      'CI/CD and cloud deployment with AWS.',
+    ],
+
+    repository: 'https://github.com/Davidn00/workflow-saas',
+
+    featured: true,
+  },
+  {
     id: 'medlab',
     slug: 'medlab-platform',
     title: 'MedLab Platform',

@@ -12,9 +12,12 @@ import { useTranslation } from 'react-i18next';
 
 import { profile } from '../../data/profile';
 import { SocialLinks } from '../../components/common/SocialLinks';
+import { projects } from '../../data/projects';
 
 export function HeroSection() {
   const { t, i18n } = useTranslation();
+
+  const totalProjects = String(projects.length).padStart(2, '0');
 
   const language = i18n.resolvedLanguage === 'es' ? 'es' : 'en';
 
@@ -99,7 +102,7 @@ export function HeroSection() {
         <div className="profile-metrics">
           <div>
             <Code2 size={19} />
-            <strong>02</strong>
+            <strong>{totalProjects}</strong>
             <span>{t('hero.metrics.software')}</span>
           </div>
 

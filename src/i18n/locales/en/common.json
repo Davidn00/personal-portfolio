@@ -61,16 +61,28 @@
         "description": "Modern web applications and user interfaces."
       },
       "data": {
-        "title": "Databases & Data",
-        "description": "Data storage, processing and analysis."
+        "title": "Data & Persistence",
+        "description": "Database management, data persistence and caching systems."
       },
-      "instrumentation": {
-        "title": "Instrumentation & Embedded",
-        "description": "Measurement systems and hardware integration."
+      "processing": {
+        "title": "Asynchronous Processing",
+        "description": "Asynchronous tasks, event-driven communication and background processing."
+      },
+      "quality": {
+        "title": "Quality & Delivery",
+        "description": "Software testing, code quality, security analysis and continuous integration."
+      },
+      "scientific": {
+        "title": "Scientific Computing & Data Analysis",
+        "description": "Scientific programming, numerical computation and signal analysis."
+      },
+      "embedded": {
+        "title": "Embedded Systems & Instrumentation",
+        "description": "Embedded development, microcontrollers and biomedical instrumentation."
       },
       "cloud": {
-        "title": "Cloud & DevOps",
-        "description": "Infrastructure, automation and deployment."
+        "title": "Cloud & Deployment",
+        "description": "Cloud infrastructure, database hosting and application deployment."
       },
       "practices": {
         "title": "Software Engineering",
@@ -85,7 +97,9 @@
     "filters": {
       "all": "All",
       "backend": "Backend",
+      "frontend": "Frontend",
       "instrumentation": "Instrumentation",
+      "saas": "SaaS",
       "embedded": "Embedded",
       "research": "Research"
     },
@@ -112,11 +126,51 @@
     "demo": "Live demo",
     "categories": {
       "backend": "Backend",
+      "frontend": "Frontend",
       "instrumentation": "Instrumentation",
+      "saas": "SaaS",
       "embedded": "Embedded",
       "research": "Research"
     },
     "items": {
+      "workflow-saas": {
+        "description": "A multi-tenant SaaS platform for business operations, combining lightweight CRM, task management and configurable approval workflows.",
+        "overview": "WorkFlow SaaS is a business management platform designed to help small companies centralize customer relationships, team collaboration, task assignments and approval processes through an integrated web application.",
+        "problem": "Small businesses often manage customers, employees, tasks and approval processes across disconnected tools. This creates operational fragmentation, limited traceability, inconsistent workflows and security challenges when multiple organizations share the same platform.",
+        "solution": "A modular monolith SaaS application that centralizes business operations through a REST API and an integrated web interface. The platform is designed around organization-level data isolation, granular permissions, versioned approval workflows and asynchronous processing.",
+        "features": [
+          "Multi-tenant architecture with organization-level data isolation.",
+          "User authentication and secure session management.",
+          "Organization management, memberships and invitations.",
+          "Role-based access control (RBAC) and granular permissions.",
+          "CRM module for customers, contacts and sales opportunities.",
+          "Task management with priorities, assignments and deadlines.",
+          "Configurable and versioned business workflows.",
+          "Approval management with sequential decision processes.",
+          "Transactional operations and concurrency control.",
+          "Audit logging and operational traceability.",
+          "Asynchronous notifications and background processing.",
+          "CSV exports and scheduled tasks.",
+          "Business dashboard with operational metrics.",
+          "REST API with OpenAPI documentation.",
+          "Automated testing and CI/CD pipeline strategy.",
+          "Docker-based development and AWS deployment strategy."
+        ],
+        "architecture": "React + TypeScript frontend → HTTPS / REST → FastAPI API v1 → Authentication → Authorization / Tenant Context → Application Services → SQLAlchemy → PostgreSQL. Celery workers use Redis for asynchronous jobs, notifications, exports and scheduled tasks.",
+        "highlights": [
+          "Modular monolith architecture.",
+          "Multi-tenant data isolation.",
+          "Granular authorization and RBAC.",
+          "Business-oriented domain modeling.",
+          "Versioned workflows and approval engine.",
+          "Transactional integrity and concurrency control.",
+          "Asynchronous processing with Celery and Redis.",
+          "Automated testing and security validation.",
+          "Containerization with Docker.",
+          "CI/CD and cloud deployment strategy with AWS."
+        ]
+      },
+
       "medlab": {
         "description": "A LIMS-inspired platform for biomedical laboratories, covering samples, tests, equipment, reporting and operational workflows.",
         "overview": "MedLab Platform is a biomedical laboratory management system designed to organize laboratory operations, manage samples and tests, monitor biomedical equipment and generate technical reports.",

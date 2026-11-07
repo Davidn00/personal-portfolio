@@ -54,6 +54,12 @@ describe('Personal Portfolio Application', () => {
 
     expect(
       screen.getByRole('heading', {
+        name: /workflow saas/i,
+      }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('heading', {
         name: /medlab platform/i,
       }),
     ).toBeInTheDocument();

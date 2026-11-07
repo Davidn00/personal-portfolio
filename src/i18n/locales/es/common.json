@@ -61,16 +61,28 @@
         "description": "Aplicaciones web modernas e interfaces de usuario."
       },
       "data": {
-        "title": "Bases de datos y datos",
-        "description": "Almacenamiento, procesamiento y análisis de datos."
+        "title": "Datos y Persistencia",
+        "description": "Gestión de bases de datos, persistencia de datos y sistemas de almacenamiento en caché."
       },
-      "instrumentation": {
-        "title": "Instrumentación y sistemas embebidos",
-        "description": "Sistemas de medición e integración de hardware."
+      "processing": {
+        "title": "Procesamiento asíncrono",
+        "description": "Tareas asíncronas, comunicación basada en eventos y procesamiento en segundo plano."
+      },
+      "quality": {
+        "title": "Calidad y entrega",
+        "description": "Pruebas de software, calidad de código, análisis de seguridad e integración continua."
+      },
+      "scientific": {
+        "title": "Computación científica y análisis de datos",
+        "description": "Programación científica, cómputo numérico y análisis de señales."
+      },
+      "embedded": {
+        "title": "Sistemas embebidos e instrumentación",
+        "description": "Desarrollo embebido, microcontroladores e instrumentación biomédica."
       },
       "cloud": {
-        "title": "Cloud y DevOps",
-        "description": "Infraestructura, automatización y despliegue."
+        "title": "Nube y Despliegue",
+        "description": "Infraestructura en la nube, alojamiento de bases de datos y despliegue de aplicaciones."
       },
       "practices": {
         "title": "Ingeniería de software",
@@ -112,11 +124,50 @@
     "demo": "Demo en vivo",
     "categories": {
       "backend": "Backend",
+      "frontend": "Frontend",
       "instrumentation": "Instrumentación",
+      "saas": "SaaS",
       "embedded": "Sistemas embebidos",
       "research": "Investigación"
     },
     "items": {
+      "workflow-saas": {
+        "description": "Una plataforma SaaS multiusuario para la gestión empresarial que integra un CRM ligero, administración de tareas y flujos de trabajo configurables para procesos de aprobación.",
+        "overview": "WorkFlow SaaS es una plataforma de gestión empresarial diseñada para ayudar a pequeñas empresas a centralizar las relaciones con sus clientes, la colaboración entre equipos, la asignación de tareas y los procesos de aprobación mediante una aplicación web integrada.",
+        "problem": "Las pequeñas empresas suelen gestionar clientes, empleados, tareas y procesos de aprobación mediante herramientas independientes. Esto genera fragmentación operativa, poca trazabilidad, flujos de trabajo inconsistentes y desafíos de seguridad cuando varias organizaciones comparten una misma plataforma.",
+        "solution": "Una aplicación SaaS basada en una arquitectura de monolito modular que centraliza las operaciones empresariales mediante una API REST y una interfaz web integrada. La plataforma está diseñada para garantizar el aislamiento de datos por organización, gestionar permisos granulares, utilizar flujos de aprobación versionados y ejecutar procesos asíncronos.",
+        "features": [
+          "Arquitectura multi-tenant con aislamiento de datos a nivel de organización.",
+          "Autenticación de usuarios y gestión segura de sesiones.",
+          "Administración de organizaciones, membresías e invitaciones.",
+          "Control de acceso basado en roles (RBAC) y permisos granulares.",
+          "Módulo CRM para la gestión de clientes, contactos y oportunidades de venta.",
+          "Gestión de tareas con prioridades, asignaciones y fechas límite.",
+          "Flujos de trabajo empresariales configurables y versionados.",
+          "Gestión de aprobaciones mediante procesos de decisión secuenciales.",
+          "Operaciones transaccionales y control de concurrencia.",
+          "Registro de auditoría y trazabilidad de las operaciones.",
+          "Notificaciones asíncronas y procesamiento de tareas en segundo plano.",
+          "Exportación de datos en formato CSV y tareas programadas.",
+          "Panel de control empresarial con indicadores operativos.",
+          "API REST con documentación OpenAPI.",
+          "Estrategia de pruebas automatizadas e integración y entrega continuas (CI/CD).",
+          "Entorno de desarrollo basado en Docker y estrategia de despliegue en AWS."
+        ],
+        "architecture": "Frontend desarrollado con React + TypeScript → Comunicación HTTPS / REST → API v1 desarrollada con FastAPI → Autenticación → Autorización y contexto del tenant → Servicios de aplicación → SQLAlchemy → PostgreSQL. Los trabajadores de Celery utilizan Redis para ejecutar tareas asíncronas, gestionar notificaciones, generar exportaciones y ejecutar tareas programadas.",
+        "highlights": [
+          "Arquitectura de monolito modular.",
+          "Aislamiento de datos en una arquitectura multi-tenant.",
+          "Autorización granular y control de acceso basado en roles (RBAC).",
+          "Modelado de dominio orientado a procesos empresariales.",
+          "Flujos de trabajo versionados y motor de aprobación.",
+          "Integridad transaccional y control de concurrencia.",
+          "Procesamiento asíncrono mediante Celery y Redis.",
+          "Pruebas automatizadas y validaciones de seguridad.",
+          "Contenerización de servicios mediante Docker.",
+          "Estrategia de CI/CD y despliegue en la nube mediante AWS."
+        ]
+      },
       "medlab": {
         "description": "Plataforma de gestión de laboratorios biomédicos inspirada en un LIMS, que integra muestras, pruebas, equipos, informes y flujos operativos.",
         "overview": "MedLab Platform es un sistema de gestión de laboratorios biomédicos diseñado para organizar operaciones, administrar muestras y pruebas, supervisar equipos biomédicos y generar informes técnicos.",
