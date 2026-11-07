@@ -36,6 +36,21 @@ test-results/
 *.pem
 *.key
 
+# Playwright
+/playwright-report/
+/test-results/
+/playwright/.cache/
+
+# Lighthouse
+/.lighthouseci/
+
+# Test coverage
+/coverage/
+
+# Temporary QA files
+*.har
+
 # Archivos temporales de Microsoft Office
 ~$*
 Personal_Portfolio_Documentacion.docx  
+

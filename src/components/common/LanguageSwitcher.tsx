@@ -21,7 +21,7 @@ export function LanguageSwitcher() {
         type="button"
         className={currentLanguage === 'es' ? 'active' : ''}
         aria-pressed={currentLanguage === 'es'}
-        aria-label={t('language.spanish')}
+        aria-label={`ES – ${t('language.spanish')}`}
         onClick={() => changeLanguage('es')}
       >
         ES
@@ -33,7 +33,7 @@ export function LanguageSwitcher() {
         type="button"
         className={currentLanguage === 'en' ? 'active' : ''}
         aria-pressed={currentLanguage === 'en'}
-        aria-label={t('language.english')}
+        aria-label={`EN – ${t('language.english')}`}
         onClick={() => changeLanguage('en')}
       >
         EN

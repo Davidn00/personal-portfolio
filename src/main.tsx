@@ -6,6 +6,7 @@ import { ThemeProvider } from './app/providers/ThemeProvider';
 
 import './index.css';
 import './i18n';
+import '@fontsource-variable/inter';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

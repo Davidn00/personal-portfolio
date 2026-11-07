@@ -22,9 +22,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <Link
         to={`/projects/${project.slug}`}
         className="project-art"
-        aria-label={`${t(`${translationKey}.description`)} — ${t(
-          'projects.viewDetails',
-        )}`}
+        aria-hidden="true"
+        tabIndex={-1}
       >
         <div className="project-art-decoration" />
 

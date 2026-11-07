@@ -337,5 +337,8 @@
   "errors": {
     "notFound": "The requested project could not be found.",
     "goHome": "Back to home"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content"
   }
 }

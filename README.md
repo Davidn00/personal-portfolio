@@ -33,6 +33,105 @@ engineering teams and technology companies.
 - Prettier
 - TypeScript
 
+## Quality Assurance
+
+The project includes an automated testing
+and quality assurance infrastructure.
+
+### Testing
+
+- Vitest for unit tests.
+- React Testing Library for component tests.
+- Playwright for end-to-end testing.
+- axe-core for accessibility validation.
+- Lighthouse CI for performance auditing.
+
+### Quality Checks
+
+Run static analysis:
+
+```bash
+npm run lint
+```
+
+Check formatting:
+
+```bash
+npm run format:check
+```
+
+TypeScript validation:
+
+```bash
+npm run typecheck
+```
+
+Run unit tests:
+
+```bash
+npm run test:run
+```
+
+Run tests with coverage:
+
+```bash
+npm run test:coverage
+```
+
+Run end-to-end tests:
+
+```bash
+npm run test:e2e
+```
+
+Run Chromium tests only:
+
+```bash
+npm run test:e2e:chromium
+```
+
+Run accessibility tests:
+
+```bash
+npm run test:a11y
+```
+
+Generate production build:
+
+```bash
+npm run build
+```
+
+Run Lighthouse:
+
+```bash
+npm run lighthouse
+```
+
+### QA Documentation
+
+Detailed QA reports are available in:
+
+```text
+docs/qa/
+├── QA_REPORT.md
+├── RESPONSIVE_MATRIX.md
+└── ACCESSIBILITY_REPORT.md
+```
+
+### Browser Compatibility
+
+Automated testing includes:
+
+- Chromium
+- Firefox
+- WebKit
+- Mobile Chromium
+- Mobile WebKit
+
+Actual device validation remains part
+of the manual QA process.
+
 ### Testing
 
 - Vitest

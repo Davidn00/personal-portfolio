@@ -336,5 +336,8 @@
   "errors": {
     "notFound": "No se encontró el proyecto solicitado.",
     "goHome": "Volver al inicio"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal"
   }
 }
