@@ -290,3 +290,32 @@ public/
 ├── documents/
 └── images/
 ```
+
+---
+
+## Production Deployment
+
+The portfolio is deployed on AWS as a secure static website.
+
+- Amazon S3 (private bucket) and Amazon CloudFront (HTTPS CDN).
+- Origin Access Control (OAC) with a restrictive bucket policy.
+- Cache strategy tuned per file type.
+- Deployments run from `npm run deploy` using temporary
+  credentials (`aws login`); no permanent keys are stored.
+
+### Deploy
+
+```bash
+aws login
+npm run deploy
+```
+
+### Documentation
+
+- [AWS Architecture](docs/deployment/AWS_ARCHITECTURE.md)
+- [AWS Setup](docs/deployment/AWS_SETUP.md)
+- [AWS Recovery](docs/deployment/AWS_RECOVERY.md)
+
+### Production URL
+
+https://dov62esnlp0xr.cloudfront.net

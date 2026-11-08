@@ -19,11 +19,11 @@
     "headingEnd": "del mundo real.",
     "eyebrow": "INGENIERÍA DE SOFTWARE Y SISTEMAS BIOMÉDICOS",
     "heading": "Desarrollando software para resolver problemas reales.",
-    "role": "Software Engineer | Python Backend Developer | Biomedical & Instrumentation Software",
+    "role": "Ingeniero de Software | Desarrollador Backend Python | Ingeniero Biomédico & Instrumentation",
     "description": "Desarrollo soluciones de software que conectan la ingeniería backend, la instrumentación biomédica y las aplicaciones orientadas a datos, desde APIs robustas hasta sistemas de adquisición y procesamiento de señales.",
     "contact": "Contactar",
     "downloadCv": "Descargar CV",
-    "scroll": "Explorar portfolio",
+    "scroll": "Explorar portafolio",
     "available": "Abierto a oportunidades profesionales",
     "location": "Ciudad de México, México",
     "metrics": {
@@ -36,10 +36,10 @@
     "eyebrow": "PERFIL PROFESIONAL",
     "title": "Sobre mí",
     "description": "Una combinación de ingeniería, programación y experiencia en sistemas de medición.",
-    "paragraph1": "Soy un ingeniero orientado al desarrollo de software, con formación en Ingeniería Biomédica y estudios de posgrado en Ingeniería Eléctrica, especializado en Instrumentación.",
+    "paragraph1": "Soy un ingeniero orientado al desarrollo de software, con formación en Ingeniería Biomédica y Maestría en Ingeniería Eléctrica, especializado en Instrumentación.",
     "paragraph2": "Mi trabajo integra desarrollo backend, sistemas de medición, adquisición de datos y procesamiento de señales. Me interesa transformar requisitos técnicos complejos en soluciones de software mantenibles, escalables y verificables.",
     "focusLabel": "Área profesional",
-    "focusValue": "Backend y software de ingeniería",
+    "focusValue": "Backend y Software de Ingeniería",
     "locationLabel": "Ubicación",
     "locationValue": "Ciudad de México, México",
     "languagesLabel": "Idiomas",
@@ -65,19 +65,19 @@
         "description": "Gestión de bases de datos, persistencia de datos y sistemas de almacenamiento en caché."
       },
       "processing": {
-        "title": "Procesamiento asíncrono",
+        "title": "Procesamiento Asíncrono",
         "description": "Tareas asíncronas, comunicación basada en eventos y procesamiento en segundo plano."
       },
       "quality": {
-        "title": "Calidad y entrega",
+        "title": "Calidad y Entrega",
         "description": "Pruebas de software, calidad de código, análisis de seguridad e integración continua."
       },
       "scientific": {
-        "title": "Computación científica y análisis de datos",
+        "title": "Computación Científica y Análisis de Datos",
         "description": "Programación científica, cómputo numérico y análisis de señales."
       },
       "embedded": {
-        "title": "Sistemas embebidos e instrumentación",
+        "title": "Sistemas Embebidos e Instrumentación",
         "description": "Desarrollo embebido, microcontroladores e instrumentación biomédica."
       },
       "cloud": {
@@ -85,7 +85,7 @@
         "description": "Infraestructura en la nube, alojamiento de bases de datos y despliegue de aplicaciones."
       },
       "practices": {
-        "title": "Ingeniería de software",
+        "title": "Ingeniería de Software",
         "description": "Arquitectura, calidad y buenas prácticas de desarrollo."
       }
     }
