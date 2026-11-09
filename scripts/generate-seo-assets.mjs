@@ -1,18 +1,30 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 
-const siteUrl = process.env.VITE_SITE_URL?.replace(/\/+$/, '');
+const rawSiteUrl = process.env.VITE_SITE_URL;
 
-if (!siteUrl) {
+if (!rawSiteUrl) {
   throw new Error(
     'VITE_SITE_URL must be defined before generating production SEO assets.',
   );
 }
 
-const parsedUrl = new URL(siteUrl);
+const parsedUrl = new URL(rawSiteUrl);
 
 if (parsedUrl.protocol !== 'https:') {
-  throw new Error('VITE_SITE_URL must use HTTPS.');
+  throw new Error('Production URL must use HTTPS.');
 }
+
+if (
+  parsedUrl.pathname !== '/' ||
+  parsedUrl.search ||
+  parsedUrl.hash ||
+  parsedUrl.username ||
+  parsedUrl.password
+) {
+  throw new Error('VITE_SITE_URL must contain only the production origin.');
+}
+
+const siteUrl = parsedUrl.origin.replace(/\/+$/, '');
 
 const routes = [
   {
@@ -41,12 +53,21 @@ const routes = [
   },
 ];
 
+function escapeXml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
   .map(
     ({ path, priority }) => `  <url>
-    <loc>${siteUrl}${path}</loc>
+    <loc>${escapeXml(`${siteUrl}${path}`)}</loc>
     <changefreq>monthly</changefreq>
     <priority>${priority}</priority>
   </url>`,
@@ -68,5 +89,6 @@ await Promise.all([
   writeFile('dist/robots.txt', robots, 'utf8'),
 ]);
 
-console.log('Production SEO assets generated successfully.');
-console.log(`Site URL: ${siteUrl}`);
+console.log('SEO assets generated successfully.');
+console.log(`Production URL: ${siteUrl}`);
+console.log(`Sitemap routes: ${routes.length}`);
